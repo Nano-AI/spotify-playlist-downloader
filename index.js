@@ -1,9 +1,10 @@
 const { getTracks } = require("spotify-url-info");
 const yts = require('yt-search');
 const YoutubeMp3Downloader = require("youtube-mp3-downloader");
+const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 
 const YD = new YoutubeMp3Downloader({
-    "ffmpegPath": "./bin/ffmpeg.exe",       // FFmpeg binary location
+    "ffmpegPath": ffmpeg.path,       // FFmpeg binary location
     "outputPath": "./Songs",                // Output file location (default: the home directory)
     "youtubeVideoQuality": "highestaudio",  // Desired video quality (default: highestaudio)
     "queueParallelism": 2,                  // Download parallelism (default: 1)
